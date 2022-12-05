@@ -83,14 +83,36 @@
                 line-height: 77px !important;
             }
         }
+
+        /* MUSIC PLAYER STYLE */
+        #player-container #play-pause {
+            cursor: pointer;
+            text-indent: -999999px;
+            height: 50px;
+            width: 50px;
+            padding: 12px 18px;
+            z-index: 9;
+            background-image: url("assets/images/volume-off.png");
+            background-repeat: no-repeat !important;
+            background-position: center;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 25px;
+            background-color: #fff;
+        }
+
+        .play {
+            background-image: url("assets/images/volume-on.png");
+        }
+
+        .pause {
+            background-image: url("assets/images/volume-on.png") !important;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <iframe src="assets\audio\silence.mp3" allow="autoplay" style="display: none"></iframe> -->
-    <audio id="player" autoplay loop>
-        <source src="assets\audio\KabiraInstrumental.mp3" type="audio/mp3">
-    </audio>
     <div class="page-wrapper">
 
         <div class="preloader">
@@ -105,8 +127,8 @@
             </div>
         </div>
 
-
         <header id="header">
+
             <div class="wpo-site-header wpo-header-style-1" id="sticky-header">
                 <nav class="navigation navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
@@ -141,6 +163,15 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- MUSIC PART -->
+                        <audio id="track" autoplay loop>
+                            <source src="assets\audio\KabiraInstrumental.mp3" type="audio/mp3" />
+                        </audio>
+
+                        <div id="player-container" style="position: absolute; right: 10px;">
+                            <div id="play-pause" class="play">Play</div>
+                        </div>
+                        <!--  -->
                     </div>
                 </nav>
             </div>
@@ -676,6 +707,30 @@
         }
 
         setInterval(function () { makeTimer(); }, 1000);
+    </script>
+    <!-- MUSIC SCRIPT -->
+    <script>
+        var track = document.getElementById('track');
+
+        var controlBtn = document.getElementById('play-pause');
+
+        function playPause() {
+            if (track.paused) {
+                track.play();
+                //controlBtn.textContent = "Pause";
+                controlBtn.className = "pause";
+            } else {
+                track.pause();
+                //controlBtn.textContent = "Play";
+                controlBtn.className = "play";
+            }
+        }
+
+        controlBtn.addEventListener("click", playPause);
+        track.addEventListener("ended", function () {
+            controlBtn.className = "play";
+        });
+
     </script>
 </body>
 
