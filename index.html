@@ -82,6 +82,14 @@
                 font-size: 32px !important;
                 line-height: 77px !important;
             }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            iframe {
+                height: 690px;
+                width: 270px;
+            }
         }
 
         /* MUSIC PLAYER STYLE */
@@ -243,8 +251,8 @@
                                 </div>
                                 <div class="couple-text">
                                     <h3>Piyush Kapale</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda 
-                                        animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda
+                                        animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis
                                         eaque a odio omnis ducimus! Est tempora quibusdam corrupti non?</p>
                                 </div>
                             </div>
@@ -263,8 +271,8 @@
                                 </div>
                                 <div class="couple-text">
                                     <h3>Sakshi More</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda 
-                                        animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda
+                                        animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis
                                         eaque a odio omnis ducimus! Est tempora quibusdam corrupti non?</p>
                                 </div>
                             </div>
@@ -304,7 +312,7 @@
                             <div class="wpo-story-content-inner">
                                 <h2>First Time We Meet</h2>
                                 <span>1 Dec 2011</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda 
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda
                                     animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis</p>
                             </div>
                         </div>
@@ -319,7 +327,7 @@
                             <div class="wpo-story-content-inner">
                                 <h2>Our first proposal (Ouch!)</h2>
                                 <span>20 Jun 2012</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda 
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda
                                     animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis </p>
                             </div>
                         </div>
@@ -334,7 +342,7 @@
                             <div class="wpo-story-content-inner">
                                 <h2>She Said Yes</h2>
                                 <span>14 Sep 2021</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda 
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse assumenda
                                     animi obcaecati quidem sunt ipsa ex, nobis, odit asperiores reiciendis</p>
                             </div>
                         </div>
@@ -553,7 +561,7 @@
                                         <h4>Are You</h4>
                                         <h4>Attending?</h4>
                                     </div>
-                                    <form method="post" class="contact-validation-active" id="contact-form-main2">
+                                    <!-- <form method="post" class="contact-validation-active" id="contact-form-main2">
                                         <div>
                                             <input type="text" class="form-control" name="name" id="name"
                                                 placeholder="Name">
@@ -626,7 +634,9 @@
                                                     aria-label="Close"></button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form> -->
+                                    <iframe src="https://forms.gle/vZgu1dngK4SMRsss6" width="485" height="700"
+                                        frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
                                 </div>
                             </div>
                             <div class="shape-1"><img class="floating-item wow fadeInLeftSlow"
@@ -731,6 +741,14 @@
             controlBtn.className = "play";
         });
 
+    </script>
+    <!-- FORM SCRIPT -->
+    <script>
+        var iframe = document.getElementById('frame');
+
+        iframe.addEventListener('load', function () {
+            console.log(iframe.contentDocument.querySelector('form + div'))
+        })
     </script>
 </body>
 
